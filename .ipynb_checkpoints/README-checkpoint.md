@@ -24,9 +24,10 @@ Table of Contents
   * [3.1 Basic Usage](#basic-usage)
   
     * [3.1.1 Markdown](#markdown)
-    * [3.1.2 Cell](#cell)
-    * [3.1.3 Magic Code](#magic-code)
     
+    * [3.1.2 Cell](#cell)
+    
+    * [3.1.3 Magic Code](#magic-code)
     
   * [3.2 Shortcut](#shortcut)
     
@@ -47,6 +48,8 @@ Installation
 
 You may install Jupyter in the following two ways: with [script](https://github.com/yqlbu/jetson_lab/blob/master/install.sh) or with [commands](#install-with-commands)
 
+-- Notes: By default, JupyterLab will be installed with Python3.x Version, if you want to install with Python2.7 version, simply do pip install instead of pip3.
+
 #### Install with Script
 
 ```shell script
@@ -60,15 +63,11 @@ sh install.sh
 
 ```bash
 # install pip
-sudo apt-get install python-pip
 sudo apt-get install python3-pip
-sudo pip install --upgrade pip 
 sudo pip3 install --upgrade pip
 
 # install jupyter
-pip install jupyterlab
 pip3 install jupyterlab
-pip install --upgrade --force jupyter-console
 pip3 install --upgrade --force jupyter-console
 
 # check installation version
@@ -222,7 +221,65 @@ Being familiar to the embedded shortcut in JupyterLab may help us enhance workin
 
 ---
 
-### Add Virtual/Conda Environment
+### Add Conda Environment
+
+The default Kernel in JupyterLab is set as the system Kernel (Python3). Follow the instructions below to add a conda environment into the Kernel list in JupyterLab.
+
+[Anaconda](https://www.anaconda.com/) is a free and open-source distribution of the Python and R programming languages for scientific computing (data science, machine learning applications, large-scale data processing, predictive analytics, etc.), that aims to simplify package management and deployment. Like Virtualenv, Anaconda also uses the concept of creating environments so as to isolate different libraries and versions.
+
+#### Step 0: Install Conda
+
+-- Notes: if you have already installed Anaconda 3 in your machine, skip this step
+
+For Jetson devices or other ARM-based IoT devices, take a look at the [Archiconda3](https://github.com/yqlbu/archiconda3) reference for installation guide.
+
+For x86 PC or Mac, visit [Anaconda](https://www.anaconda.com/products/individual) site for installation guide.
+
+For Ubuntu 18.04 x86, use the following commands:
+
+```bash
+sudo apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
+wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
+bash ~/Anaconda3-2020.02-Linux-x86_64.sh
+source anaconda3/bin/activate
+```
+
+#### Step 1: Install Conda-Kernels
+
+```bash
+conda install -c gaiar nb_conda_kernels
+```
+
+#### Step 2: Add Conda Env to Kernels
+
+You will need to first **activate the conda environment**, and install the **ipykernel** within the conda environment.
+
+```bash
+conda activate envname
+conda install ipykernel
+conda deactivate
+python3 -m ipykernel install --user --name=envname
+```
+
+Other Operations:
+
+**Remove a conda environment from Kernel list**
+
+```bash
+jupyter kernelspec uninstall envname
+```
+
+**List all conda environments in Kernel**
+
+```bash
+jupyter kernelspec list
+```
+
+If everything has been setup properly, you should be able to find the new added Conda Environment in the Kernel list.
+
+![](demo_screenshots/conda_env.png)
+![](demo_screenshots/conda_env_2.png)
+
 
 <a name="add-virtual/conda-environment"></a>
 

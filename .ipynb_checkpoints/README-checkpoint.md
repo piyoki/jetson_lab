@@ -1,4 +1,4 @@
-# Jupyter on Jetson
+# JupyterLab on Jetson
 
 *** Copy Right 2020 Kevin Yu. All rights reserved.
 

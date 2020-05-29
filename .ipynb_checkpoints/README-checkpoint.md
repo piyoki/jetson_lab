@@ -59,7 +59,7 @@ sh install.sh
 
 #### Install with Commands
 
-```shell script
+```bash
 # install pip
 sudo apt-get install python-pip
 sudo apt-get install python3-pip
@@ -74,6 +74,9 @@ pip3 install --upgrade --force jupyter-console
 
 # check installation version
 jupyter lab -V
+
+# export environment path
+export PATH=$PATH:~/.local/bin
 ```
 
 <a name="installation"></a>
@@ -83,13 +86,13 @@ Setup
 
 ##### Step 0: Create Password
 
-```shell script
+```bash
 jupyter-notebook password
 ```
 
 ##### Step 1: Create Hash Code
 
-```shell script
+```bash
 ipython
 from notebook.auth import passwd
 passwd()
@@ -101,16 +104,18 @@ passwd()
 ##### Step 2: Config JupyterLab
 
 ##### Generate a config file
-```shell script
+```bash
 jupyter lab --generate-config
 # it will be saved as "jupyter_notebook_config.py" in /home/username/.jupyter/
 ```
+
 ##### Modify the Content
-```
+```bash
 cd /home/username/.jupyter/ # modify username
 nano jupyter_notebook_config.py
 # then press Ctrl + W to search the following lines, and modify accordingly
 ```
+
 Modify the following lines:
 ```python
 # Login as root
@@ -126,6 +131,14 @@ c.NotebookApp.password = u'sha1:b92f3fb7d848:a5d40ab2e26aa3b296ae1faa17aa34d3df3
 # Set the PORT for Remote Log In
 c.NotebookApp.port = 8080
 ```
+
+##### Step 3: Run
+
+```bash
+jupyter lab
+```
+
+Now,  you should be able to log in at [localhost:8080](http://localhost:8080)
 
 <a name="setup"></a>
 

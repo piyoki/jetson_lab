@@ -175,6 +175,26 @@ Open up a notebook, select a cell and then press the **M key**, the cell will co
 
 #### Magic Code
 
+The special commands that embedded in IPython are so called **"Magic Code"**. Magic Code often starts with a **"%"**
+
+**％timeit** can check the runtime of executing a specific line of code.
+
+**%run** can run any Python file inside a cell. Eg: %run hello_world.py
+
+**%cd + file_dir** can navigate to a particular directory in your machine. Eg: %cd ~
+
+--- Notes: You may also execute shell commands inside a cell. To do so, simply place a **"!"** before the shell command.
+
+For example:
+
+**!pip3 list** : check installed python packages
+
+**!sudo apt-get install xxx** : install deb packages
+
+**!sh demo.sh** : execute a bash script
+
+
+
 <a name="magic-code"></a>
 
 

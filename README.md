@@ -76,7 +76,7 @@ pip3 install --upgrade --force jupyter-console
 jupyter lab -V
 
 # export environment path
-export PATH=$PATH:~/.local/bin
+
 ```
 
 <a name="installation"></a>
@@ -146,6 +146,38 @@ Usage
 -----
 
 ### Basic Usage
+
+Notes: The usage of JupyterLab is basically identical to that of Jupyter Notebook
+
+<a name="basic-usage"></a>
+
+#### Markdown
+
+For any Markdown file, you may open a preview window while editing.
+
+To do so, open a **.md** file and simply **Right-Click** >> **Show Markdown Preview**
+
+<a name="markdown"></a>
+
+![](http://www.5845.cn/wp-content/uploads/2020/02/7057214fab6a3db5f5291164e87b2598.gif)
+
+#### Cell
+
+A single Notebook is a Kernel, and it contains multiple cells
+
+There are three types of cell: markdown, code, and row
+
+Open up a notebook, select a cell and then press the **M key**, the cell will convert to markdown format. Press the **Y key** to change it back to the default code format.
+
+![](http://www.5845.cn/wp-content/uploads/2020/02/5cb35387e50794128218446c38d8f17b.gif)
+
+<a name="cell"></a>
+
+#### Magic Code
+
+<a name="magic-code"></a>
+
+
 
 ### Shortcut
 

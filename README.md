@@ -201,6 +201,23 @@ For example:
 
 ### Shortcut
 
+Being familiar to the embedded shortcut in JupyterLab may help us enhance working efficiency, the table below demonstrates the most commonly used shortcuts, try them out!
+
+|  key  | shortcut |       description       |
+|:-----:|:--------:|:-----------------------:|
+| Enter |   Enter  |        edit mode        |
+|  Esc  |    Esc   |       command mode      |
+|   A   |     a    |  create new cell above  |
+|   B   |     b    |  create new cell below  |
+|   C   |     c    |           copy          |
+|   V   |     v    |          paste          |
+|   M   |     m    | switch cell to markdown |
+|   Y   |     y    |   switch cell to code   |
+|   ↑   |    up    |    select cell above    |
+|   ↓   |   down   | select cell below       |
+|  D-D  |    d*2   |   delete selected cell  |
+|  I-I  |    i*2   |      stop the cell      |
+
 ### Add Virtual/Conda Environment
 
 ### Extensions

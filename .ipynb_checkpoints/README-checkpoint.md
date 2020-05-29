@@ -322,9 +322,9 @@ jupyter lab build
 
 #### Step 2: Install Extensions
 
-Please check out the most popular extensions tailored for JupyterLab in the repo [HERE](https://github.com/mauhai/awesome-jupyterlab)
+（1）Please check out the most popular extensions tailored for JupyterLab in the repo [HERE](https://github.com/mauhai/awesome-jupyterlab)
 
-Recommended Extension: [JupyterLab SysMonitor](https://github.com/jtpio/jupyterlab-system-monitor)
+（2）Recommended Extension: [JupyterLab SysMonitor](https://github.com/jtpio/jupyterlab-system-monitor)
 
 **Installation:**
 

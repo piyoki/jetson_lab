@@ -7,4 +7,4 @@ pip3 install jupyterlab
 pip3 install --upgrade --force jupyter-console
 export PATH=$PATH:~/.local/bin
 jupyter lab -V
-echo *** Installation finished ***
+echo "*** Installation finished ***"

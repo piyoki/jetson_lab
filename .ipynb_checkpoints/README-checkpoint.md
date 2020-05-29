@@ -29,6 +29,8 @@ Table of Contents
     
     * [3.1.3 Magic Code](#magic-code)
     
+    * [3.1.4 Auto Completion](#auto-completion)
+    
   * [3.2 Shortcut](#shortcut)
     
   * [3.3 Add Conda Environment](#add-conda-environment)
@@ -43,7 +45,7 @@ Table of Contents
   
   * [4.2 HTTP Login](#http-login)
   
-  * [4.3 HTTPs Login](#https-login)
+  * [4.3 HTTPS Login](#https-login)
 
 Installation
 ------------
@@ -194,9 +196,15 @@ For example:
 
 (6) **!sh demo.sh** : execute a bash script
 
-
-
 <a name="magic-code"></a>
+
+#### Auto Completion
+
+The Auto Completion feature is embedded in JupyterLab and Jupyter Notebook, to invoke this feature, simply press the **"Tab"** key when you typing a line of code.
+
+![](demo_screenshots/autocomplete.png)
+
+<a name="auto-completion"></a>
 
 ---
 
@@ -204,20 +212,21 @@ For example:
 
 Being familiar to the embedded shortcut in JupyterLab may help us enhance working efficiency, the table below demonstrates the most commonly used shortcuts, try them out!
 
-|  key  | shortcut |       description       |
-|:-----:|:--------:|:-----------------------:|
-| Enter |   Enter  |        edit mode        |
-|  Esc  |    Esc   |       command mode      |
-|   A   |     a    |  create new cell above  |
-|   B   |     b    |  create new cell below  |
-|   C   |     c    |           copy          |
-|   V   |     v    |          paste          |
-|   M   |     m    | switch cell to markdown |
-|   Y   |     y    |   switch cell to code   |
-|   ↑   |    up    |    select cell above    |
-|   ↓   |   down   |    select cell below    |
-|  D-D  |    d*2   |   delete selected cell  |
-|  I-I  |    i*2   |      stop the cell      |
+|      key      |    shortcut   |          description          |
+|:-------------:|:-------------:|:-----------------------------:|
+|     Enter     |     Enter     |           edit mode           |
+|      Esc      |      Esc      |          command mode         |
+|       A       |       a       |     create new cell above     |
+|       B       |       b       |     create new cell below     |
+|       C       |       c       |              copy             |
+|       V       |       v       |             paste             |
+|       M       |       m       |    switch cell to markdown    |
+|       Y       |       y       |      switch cell to code      |
+|       ↑       |       up      |       select cell above       |
+|       ↓       |      down     |       select cell below       |
+|      D-D      |      d*2      |      delete selected cell     |
+|      I-I      |      i*2      |         stop the cell         |
+| Shift + Enter | Shift + Enter | Run the current selected cell |
 
 <a name="shortcut"></a>
 
@@ -289,7 +298,65 @@ jupyter kernelspec list
 
 ### Extensions
 
+Fundamentally, JupyterLab is designed as an extensible environment. JupyterLab extensions can customize or enhance any part of JupyterLab. They can provide new themes, file viewers and editors, or renderers for rich outputs in notebooks. Extensions can add items to the menu or command palette, keyboard shortcuts, or settings in the settings system. Extensions can provide an API for other extensions to use and can depend on other extensions.
+
+#### Step 0: Enable Extensions
+
+-- Notes: The extensions enable is set to False by default. 
+
+You need to manually modify the config file in JupyterLab. To do so, Go to **Settings** >> **Advanced Setting Editor** >> **User Preferences**, and modify **"enable"** from **False** to **True**
+
+![](demo_screenshots/config.png)
+
+#### Step 1: Install NodeJS
+
+JupyterLab extensions are npm packages (the standard package format in Javascript development). You can search for the keyword jupyterlab-extension on the npm registry to find extensions.
+
+```bash
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+nodejs -v
+npm -v
+jupyter lab build
+```
+
+#### Step 2: Install Extensions
+
+Please check out the most popular extensions tailored for JupyterLab in the repo [HERE](https://github.com/mauhai/awesome-jupyterlab)
+
+Recommended Extension: [JupyterLab SysMonitor](https://github.com/jtpio/jupyterlab-system-monitor)
+
+**Installation:**
+
+```bash
+sudo pip3 install nbresuse==0.3.3
+jupyter labextension install jupyterlab-topbar-extension jupyterlab-system-monitor
+```
+
+**Add config:**
+
+```bash
+nano ~/.jupyter/jupyter_notebook_config.py
+```
+
+add the following lines to the bottom
+
+```python
+c = get_config()
+c.NotebookApp.ResourceUseDisplay.mem_limit = 17179869184 # 16G, modify it based on your system
+c.NotebookApp.ResourceUseDisplay.track_cpu_percent = True
+c.NotebookApp.ResourceUseDisplay.cpu_limit = 4 # 4 cores, modify it based on your system
+```
+
+**Rebuild:**
+
+```
+jupyter lab build
+```
+
 <a name="extensions"></a>
+
+![](demo_screenshots/system.png)
 
 ---
 
@@ -361,6 +428,6 @@ c.NotebookApp.port = 8080
 
 ### HTTPS Login
 
-You will have to use a Proxy Server such as Nginx and Apache2, and then use its **"Reverse Proxy"** service to map a specify PORT of an App (Jupyter) to a Domain.
+You will have to use a Proxy Server such as [Nginx](https://www.nginx.com/) and [Apache2](https://httpd.apache.org/), and then use its **"[Reverse Proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/)"** service to map a specify PORT of an App (Jupyter) to a Domain.
 
 <a name="http-login"></a>

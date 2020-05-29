@@ -13,23 +13,28 @@ Table of Contents
 
 **[1. Installation](#installation)**
 
-**[2. Usage](#usage)**
+**[2. Setup](#setup)**
 
-  * [2.1 Basic Usage](#basic-usage)
-  
-    * [2.1.1 Markdown](#markdown)
-    
-  * [2.2 Shortcut](#shortcut)
-    
-  * [2.3 Add Virtual/Conda Environment](#add-virtual/conda-environment)
-  
-  * [2.4 Create Softlinks](#create-softlinks)
-    
-**[3. Remote Login](#remote-login)**
+**[3. Usage](#usage)**
 
-  * [SSH Login](#ssh-login)
+  * [3.1 Basic Usage](#basic-usage)
   
-  * [Http Login](#http-login)
+    * [3.1.1 Markdown](#markdown)
+    * [3.1.2 Cell](#cell)
+    * [3.1.3 Magic Code](#magic-code)
+    
+    
+  * [3.2 Shortcut](#shortcut)
+    
+  * [3.3 Add Virtual/Conda Environment](#add-virtual/conda-environment)
+  
+  * [3.4 Create Softlinks](#create-softlinks)
+    
+**[4. Remote Login](#remote-login)**
+
+  * [4.1 SSH Login](#ssh-login)
+  
+  * [4.2 Http Login](#http-login)
 
 Installation
 ------------

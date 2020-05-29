@@ -40,7 +40,7 @@ Table of Contents
 
   * [4.1 SSH Login](#ssh-login)
   
-  * [4.2 Http Login](#http-login)
+  * [4.2 HTTP Login](#http-login)
 
 Installation
 ------------
@@ -110,6 +110,7 @@ jupyter lab --generate-config
 
 ##### Modify the Content
 ```bash
+mkdir ~/JupyterLab
 cd /home/username/.jupyter/ # modify username
 nano jupyter_notebook_config.py
 # then press Ctrl + W to search the following lines, and modify accordingly
@@ -122,7 +123,7 @@ c.NotebookApp.allow_root = True
 # Allow all IPs to log in
 c.NotebookApp.ip = '0.0.0.0'
 # Set JupyterLab Root Directory
-c.NotebookApp.notebook_dir = u'/root/JupyterLab'
+c.NotebookApp.notebook_dir = u'/home/username/JupyterLab' # modify username
 # Set to run without opening a new browser
 c.NotebookApp.open_browser = False
 # Set the Hash Code that was generated in the previous step
@@ -213,19 +214,44 @@ Being familiar to the embedded shortcut in JupyterLab may help us enhance workin
 |   M   |     m    | switch cell to markdown |
 |   Y   |     y    |   switch cell to code   |
 |   ↑   |    up    |    select cell above    |
-|   ↓   |   down   | select cell below       |
+|   ↓   |   down   |    select cell below    |
 |  D-D  |    d*2   |   delete selected cell  |
 |  I-I  |    i*2   |      stop the cell      |
+
+<a name="shortcut"></a>
 
 ---
 
 ### Add Virtual/Conda Environment
 
+<a name="add-virtual/conda-environment"></a>
+
+---
+
 ### Extensions
+
+<a name="extensions"></a>
+
+---
 
 ### Create Softlinks
 
-<a name="usage"></a>
+Jupyter Lab is set to open within the default root directory set in the config file. In order to access files outside the root directory, you need to create softlinks.
+
+```bash
+cd $HOME/JupyterLab/
+mkdir symlink/
+ln -s dir_path symlink
+```
+
+To unlink
+
+```bash
+cd $HOME/JupyterLab/
+unlink symlink
+```
+
+<a name="create-softlinks"></a>
 
 Remote Login
 ------------
@@ -234,4 +260,8 @@ Remote Login
 
 ### SSH Login
 
-### Http Login
+<a name="ssh-login"></a>
+
+### HTTP Login
+
+<a name="http-login"></a>

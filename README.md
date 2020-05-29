@@ -87,6 +87,8 @@ jupyter lab -V
 Setup
 -----
 
+<a name="setup"></a>
+
 ##### Step 0: Create Password
 
 ```bash
@@ -144,7 +146,6 @@ jupyter lab
 
 Now,  you should be able to log in at [localhost:8080](http://localhost:8080)
 
-<a name="setup"></a>
 
 Usage
 -----
@@ -411,7 +412,7 @@ What the above command does is it maps the 8000 Port of the local machine (clien
 
 Run jupyter lab remotely from your client machine via HTTP/HTTPS
 
-For **HTTP** connection, the setup steps are pretty much identical to the steps in the [setup](setup) section. Read the instructions carefully, and you should be good to go.
+For **HTTP** connection, the setup steps are pretty much identical to the steps in the [setup](#setup) section. Read the instructions carefully, and you should be good to go.
 
 Modify the following lines in **jupyter_notebook_config.py**:
 ```python

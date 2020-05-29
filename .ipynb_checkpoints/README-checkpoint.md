@@ -6,7 +6,7 @@
 
 *** Update Time: 2020/05/29
 
-This repo aims to give you clear instructions on how to install Jupyter Software (Jupyter Lab, Jupyter Notebook) on Jetson devices. It should work on any x86 PCs or Mac as well.
+This repo aims to give you clear instructions on how to install **Jupyter Software** (Jupyter Lab, Jupyter Notebook) on Jetson devices. It should work on any x86 PCs or Mac as well.
 
 Table of Contents
 -----------------
@@ -29,6 +29,8 @@ Table of Contents
   * [3.3 Add Virtual/Conda Environment](#add-virtual/conda-environment)
   
   * [3.4 Create Softlinks](#create-softlinks)
+  
+  * [3.5 Extensions](#extensions)
     
 **[4. Remote Login](#remote-login)**
 
@@ -39,7 +41,45 @@ Table of Contents
 Installation
 ------------
 
+You may install Jupyter in the following two ways: with [Script](https://github.com/yqlbu/jetson_lab/blob/master/install.sh) or with [commands](#install-with-commands)
+
+#### Install with Script
+
+```shell script
+cd ~
+git clone https://github.com/yqlbu/jetson_lab
+cd jetson_lab
+sudo chmod +x jetson_lab
+sh install.sh
+```
+
+#### Install with Commands
+
+```shell script
+# install pip
+sudo pip install --upgrade pip 
+sudo pip3 install --upgrade pip 
+sudo apt-get install python-pip
+sudo apt-get install python3-pip
+
+# install jupyter
+pip install jupyterlab
+pip3 install jupyterlab
+pip install --upgrade --force jupyter-console
+pip3 install --upgrade --force jupyter-console
+
+# check installation version
+jupyter lab -V
+```
+
 <a name="installation"></a>
+
+Setup
+-----
+
+
+
+<a name="setup"></a>
 
 Usage
 -----

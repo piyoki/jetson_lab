@@ -197,7 +197,7 @@ For example:
 
 <a name="magic-code"></a>
 
-
+---
 
 ### Shortcut
 

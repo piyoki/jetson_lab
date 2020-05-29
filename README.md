@@ -78,7 +78,7 @@ pip3 install --upgrade --force jupyter-console
 jupyter lab -V
 
 # export environment path
-
+export PATH=$PATH:~/.local/bin
 ```
 
 <a name="installation"></a>

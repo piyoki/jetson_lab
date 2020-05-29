@@ -51,9 +51,8 @@ You may install Jupyter in the following two ways: with [script](https://github.
 
 ```shell script
 cd ~
-git clone https://github.com/yqlbu/jetson_lab
-cd jetson_lab
-sudo chmod +x jetson_lab
+wget https://raw.githubusercontent.com/yqlbu/jetson_lab/master/install.sh
+sudo chmod +x install.sh
 sh install.sh
 ```
 
@@ -177,21 +176,21 @@ Open up a notebook, select a cell and then press the **M key**, the cell will co
 
 The special commands that embedded in IPython are so called **"Magic Code"**. Magic Code often starts with a **"%"**
 
-**％timeit** can check the runtime of executing a specific line of code.
+(1) **％timeit** can check the runtime of executing a specific line of code.
 
-**%run** can run any Python file inside a cell. Eg: %run hello_world.py
+(2) **%run** can run any Python file inside a cell. Eg: %run hello_world.py
 
-**%cd + file_dir** can navigate to a particular directory in your machine. Eg: %cd ~
+(3) **%cd + file_dir** can navigate to a particular directory in your machine. Eg: %cd ~
 
 --- Notes: You may also execute shell commands inside a cell. To do so, simply place a **"!"** before the shell command.
 
 For example:
 
-**!pip3 list** : check installed python packages
+(4) **!pip3 list** : check installed python packages
 
-**!sudo apt-get install xxx** : install deb packages
+(5) **!sudo apt-get install xxx** : install deb packages
 
-**!sh demo.sh** : execute a bash script
+(6) **!sh demo.sh** : execute a bash script
 
 
 
@@ -217,6 +216,8 @@ Being familiar to the embedded shortcut in JupyterLab may help us enhance workin
 |   ↓   |   down   | select cell below       |
 |  D-D  |    d*2   |   delete selected cell  |
 |  I-I  |    i*2   |      stop the cell      |
+
+---
 
 ### Add Virtual/Conda Environment
 

@@ -402,6 +402,8 @@ What the above command does is it maps the 8000 Port of the local machine (clien
 
   - username_@server_ip is where you host your Jupyter at
   - PORT is the PORT number you specify in the jupyter_config file
+  
+-- Now, you should be able to log in at **ip:8080**
 
 <a name="ssh-login"></a>
 
@@ -426,6 +428,8 @@ c.NotebookApp.password = u'sha1:b92f3fb7d848:a5d40ab2e26aa3b296ae1faa17aa34d3df3
 # Set the PORT for Remote Log In
 c.NotebookApp.port = 8080
 ```
+
+-- Now, you should be able to log in at **ip:8080**
 
 ### HTTPS Login
 

@@ -74,11 +74,12 @@ sudo pip3 install --upgrade pip
 pip3 install jupyterlab
 pip3 install --upgrade --force jupyter-console
 
+# export environment path
+echo >> export PATH=$PATH:~/.local/bin ~/.bashrc
+source ~/.bashrc
+
 # check installation version
 jupyter lab -V
-
-# export environment path
-export PATH=$PATH:~/.local/bin
 ```
 
 <a name="installation"></a>

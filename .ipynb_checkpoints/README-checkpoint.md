@@ -31,7 +31,7 @@ Table of Contents
     
   * [3.2 Shortcut](#shortcut)
     
-  * [3.3 Add Virtual/Conda Environment](#add-virtual/conda-environment)
+  * [3.3 Add Conda Environment](#add-conda-environment)
   
   * [3.4 Create Softlinks](#create-softlinks)
   
@@ -42,6 +42,8 @@ Table of Contents
   * [4.1 SSH Login](#ssh-login)
   
   * [4.2 HTTP Login](#http-login)
+  
+  * [4.3 HTTPs Login](#https-login)
 
 Installation
 ------------
@@ -275,7 +277,7 @@ jupyter kernelspec uninstall envname
 jupyter kernelspec list
 ```
 
-If everything has been setup properly, you should be able to find the new added Conda Environment in the Kernel list.
+-- Notes: If everything has been setup properly, you should be able to find the new added Conda Environment in the Kernel list.
 
 ![](demo_screenshots/conda_env.png)
 ![](demo_screenshots/conda_env_2.png)
@@ -317,8 +319,48 @@ Remote Login
 
 ### SSH Login
 
+Run jupyter lab remotely from your client machine via **SSH** connection
+
+Run the following commands in your local machine to connect as a client
+
+```bash
+ssh -L 8000:localhost:PORT username_@server_ip
+# eg: ssh -L 8000:localhost:8080 nvidia@10.10.10.65
+```
+
+What the above command does is it maps the 8000 Port of the local machine (client) to the 8080 Port of Jupyter in the host machine (Jetson)
+
+-- Notes: 
+
+  - username_@server_ip is where you host your Jupyter at
+  - PORT is the PORT number you specify in the jupyter_config file
+
 <a name="ssh-login"></a>
 
 ### HTTP Login
+
+Run jupyter lab remotely from your client machine via HTTP/HTTPS
+
+For **HTTP** connection, the setup steps are pretty much identical to the steps in the [setup](setup) section. Read the instructions carefully, and you should be good to go.
+
+Modify the following lines in **jupyter_notebook_config.py**:
+```python
+# Login as root
+c.NotebookApp.allow_root = True
+# Allow all IPs to log in
+c.NotebookApp.ip = '0.0.0.0'
+# Set JupyterLab Root Directory
+c.NotebookApp.notebook_dir = u'/home/username/JupyterLab' # modify username
+# Set to run without opening a new browser
+c.NotebookApp.open_browser = False
+# Set the Hash Code that was generated in the previous step
+c.NotebookApp.password = u'sha1:b92f3fb7d848:a5d40ab2e26aa3b296ae1faa17aa34d3df351704'
+# Set the PORT for Remote Log In
+c.NotebookApp.port = 8080
+```
+
+### HTTPS Login
+
+You will have to use a Proxy Server such as Nginx and Apache2, and then use its **"Reverse Proxy"** service to map a specify PORT of an App (Jupyter) to a Domain.
 
 <a name="http-login"></a>

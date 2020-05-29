@@ -10,7 +10,7 @@
 
 This repo aims to give you clear instructions on how to install **Jupyter Software** (Jupyter Lab, Jupyter Notebook) on Jetson devices. It should work on any x86 PCs or Mac as well.
 
-The guide below is a demonstration of the deployment, and the usage **JupyterLab** on Jetson. However, The usage features of Jupyter Notebook are very close to JupyterLab, so you should be able to apply the same techniques in Jupyter Notebook as well.
+The guide below is a demonstration of the deployment, and the usage **JupyterLab** on Jetson. However, The usage features of Jupyter Notebook are very close to those of JupyterLab, so you should be able to apply the same techniques in Jupyter Notebook as well.
 
 Table of Contents
 -----------------

@@ -118,7 +118,7 @@ jupyter lab --generate-config
 ##### Modify the Content
 ```bash
 mkdir ~/JupyterLab
-cd /home/username/.jupyter/ # modify username
+cd $HOME/.jupyter/ # modify username
 nano jupyter_notebook_config.py
 # then press Ctrl + W to search the following lines, and modify accordingly
 ```

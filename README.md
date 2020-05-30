@@ -104,6 +104,7 @@ passwd()
 # put your password that you set in step 0 for login to Jupyter
 # it will generate a hash code, save it in a txt file
 # hash code sample: 'sha1:b92f3fb7d848:a5d40ab2e26aa3b296ae1faa17aa34d3df351704'
+# press Ctrl + D to exit
 ```
 
 ##### Step 2: Config JupyterLab

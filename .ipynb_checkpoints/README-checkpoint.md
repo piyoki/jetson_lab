@@ -118,7 +118,7 @@ jupyter lab --generate-config
 ##### Modify the Content
 ```bash
 mkdir ~/JupyterLab
-cd $HOME/.jupyter/ # modify username
+cd $HOME/.jupyter/
 nano jupyter_notebook_config.py
 # then press Ctrl + W to search the following lines, and modify accordingly
 ```
@@ -369,7 +369,6 @@ Jupyter Lab is set to open within the default root directory set in the config f
 
 ```bash
 cd $HOME/JupyterLab/
-mkdir symlink/
 ln -s dir_path symlink
 ```
 

@@ -121,7 +121,7 @@ nano jupyter_notebook_config.py
 # then press Ctrl + W to search the following lines, and modify accordingly
 ```
 
-Modify the following lines:
+Comment out **"#"** and modify the following lines:
 ```python
 # Login as root
 c.NotebookApp.allow_root = True

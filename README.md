@@ -58,9 +58,7 @@ You may install Jupyter in the following two ways: with [script](https://github.
 
 ```shell script
 cd ~
-wget https://raw.githubusercontent.com/yqlbu/jetson_lab/master/install.sh
-sudo chmod +x install.sh
-sh install.sh
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/yqlbu/jetson_lab/master/install.sh)"
 ```
 
 #### Install with Commands

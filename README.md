@@ -117,22 +117,22 @@ jupyter lab --generate-config
 ```bash
 mkdir ~/JupyterLab
 cd $HOME/.jupyter/
-nano jupyter_notebook_config.py
+nano jupyter_lab_config.py
 # then press Ctrl + W to search the following lines, and modify accordingly
 ```
 
 Comment out **"#"** and modify the following lines:
 ```python
 # Login as root
-c.NotebookApp.allow_root = True
+c.ServerApp.allow_root = True
 # Allow all IPs to log in
-c.NotebookApp.ip = '0.0.0.0'
+c.ServerApp.ip = '0.0.0.0'
 # Set JupyterLab Root Directory
-c.NotebookApp.notebook_dir = u'/home/username/JupyterLab' # modify username
+c.ServerApp.notebook_dir = u'/home/username/JupyterLab' # modify username
 # Set to run without opening a new browser
-c.NotebookApp.open_browser = False
+c.ServerApp.open_browser = False
 # Set the Hash Code that was generated in the previous step
-c.NotebookApp.password = u'sha1:b92f3fb7d848:a5d40ab2e26aa3b296ae1faa17aa34d3df351704'
+c.ServerApp.password = u'sha1:b92f3fb7d848:a5d40ab2e26aa3b296ae1faa17aa34d3df351704'
 # Set the PORT for Remote Log In
 c.NotebookApp.port = 8080
 ```

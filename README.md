@@ -110,7 +110,7 @@ passwd()
 ##### Generate a config file
 ```bash
 jupyter lab --generate-config
-# it will be saved as "jupyter_notebook_config.py" in /home/username/.jupyter/
+# it will be saved as "jupyter_lab_config.py" in /home/username/.jupyter/
 ```
 
 ##### Modify the Content

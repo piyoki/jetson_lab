@@ -35,3 +35,11 @@ $ docker run --name jupyterlab -d \
   -v /appdata/jupyterlab:/opt/app/data \
   hikariai/jupyterlab:latest
 ```
+
+#### Run the app
+
+```
+$ jupyter lab --ip=* --port=8888 --no-browser --notebook-dir=/opt/app/data \
+  --allow-root --NotebookApp.token='' --NotebookApp.password='' \
+  --LabApp.terminado_settings='{"shell_command": ["/bin/bash"]}'
+```

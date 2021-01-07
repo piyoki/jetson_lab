@@ -17,9 +17,10 @@ This repo aims to give you clear instructions on how to install Jupyter Software
   - [3.4 Create Softlinks](#create-softlinks)
   - [3.5 Extensions](#extensions)
 - [4. Remote Login](#remote-login)
-  - [4.1 SSH Login](#ssh-login)
-  - [4.2 HTTP Login](#http-login)
-  - [4.3 HTTPS Login](#https-login)
+  - [4.1 Login with no authentication](#no-authentication)
+  - [4.2 SSH Login](#ssh-login)
+  - [4.3 HTTP Login](#http-login)
+  - [4.4 HTTPS Login](#https-login)
   
 ## Installation
 
@@ -367,6 +368,16 @@ Remote Login
 ------------
 
 <a name="remote-login"></a>
+
+### No Authentication
+
+Run jupyterlab with no credentials (token && password) required
+
+```bash
+jupyter lab --ip=* --port=8888 --no-browser --notebook-dir=/opt/app/data \
+--allow-root --NotebookApp.token='' --NotebookApp.password='' \
+--LabApp.terminado_settings='{"shell_command": ["/bin/bash"]}'
+```
 
 ### SSH Login
 

@@ -28,7 +28,7 @@ curl -fsSL https://raw.githubusercontent.com/yqlbu/jetson_lab/master/install.sh)
 
 #### Install with Docker
 
-```
+```bash
 $ docker run --name jupyterlab -d \
   -e TZ=Asia/Shanghai \
   -p 8888:8888 \
@@ -38,7 +38,7 @@ $ docker run --name jupyterlab -d \
 
 #### Run the app
 
-```
+```bash
 $ jupyter lab --ip=* --port=8888 --no-browser --notebook-dir=/opt/app/data \
   --allow-root --NotebookApp.token='' --NotebookApp.password='' \
   --LabApp.terminado_settings='{"shell_command": ["/bin/bash"]}'

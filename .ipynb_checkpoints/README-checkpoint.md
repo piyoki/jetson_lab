@@ -12,9 +12,11 @@ This repo aims to give you clear instructions on how to install **Jupyter Softwa
 
 The guide below is a demonstration of the deployment, and the usage **JupyterLab** on Jetson. However, The usage features of Jupyter Notebook are very close to those of JupyterLab, so you should be able to apply the same techniques in Jupyter Notebook as well.
 
+![](https://github.com/yqlbu/jetson_lab/blob/master/demo_screenshots/thumbnail.png)
+
 ## Docs
 
-- [Wiki (EN)]
+- [Wiki (EN)](https://github.com/yqlbu/jetson_lab/blob/master/Wiki.md)
 
 ## Quick Install
 

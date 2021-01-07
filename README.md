@@ -1,5 +1,10 @@
 # JupyterLab on Jetson
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![](<https://img.shields.io/static/v1?label=Systems&message=linux/amd64,linux/arm64&color=orange>)
+![](https://img.shields.io/static/v1?label=Software&message=JupyterLab&color=red)
+
+
 *** Copy Right 2020 Kevin Yu. All rights reserved.
 
 *** Author: Kevin Yu
@@ -23,7 +28,7 @@ The guide below is a demonstration of the deployment, and the usage **JupyterLab
 #### Install with Script
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/yqlbu/jetson_lab/master/install.sh) | bash -
+curl -fsSL https://raw.githubusercontent.com/yqlbu/jetson_lab/master/install.sh | bash -
 ```
 
 #### Install with Docker

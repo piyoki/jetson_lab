@@ -11,8 +11,8 @@ RUN echo $TZ > /etc/timezone && apt-get install -y tzdata && \
 RUN apt install -y python3 python3-pip python3-dev python3-setuptools libffi-dev \
     gcc make cmake g++ \
     git nano curl wget
-RUN pip install pip -U
 RUN ln -s /usr/bin/python3 /usr/bin/python && ln -s /usr/bin/pip3 /usr/bin/pip 
+RUN pip install pip -U
 RUN pip install jupyterlab
 RUN pip install --upgrade --force jupyter-console 
 RUN echo 'export PATH=$PATH:~/.local/bin' >> ~/.bashrc
